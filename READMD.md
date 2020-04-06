@@ -1,3 +1,3 @@
 
-+ [] ES6
-+ [] TypeScript
++ [x] ES6
++ [ ] TypeScript
