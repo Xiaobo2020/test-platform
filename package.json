@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "compile": "rm -rf lib && ./node_modules/.bin/babel src --out-dir lib",
-    "start": "node ./lib/index.js",
-    "test": "npm run compile && npm run start"
+    "dev": "node ./lib/index.js",
+    "start": "npm run compile && npm run dev"
   },
   "keywords": [],
   "author": "",
