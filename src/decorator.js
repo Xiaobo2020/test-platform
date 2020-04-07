@@ -1,3 +1,9 @@
+// 属性设置为只读
+function readonly (target, name, descriptor) {
+  descriptor.writable = false;
+  return descriptor;
+}
+// 添加日志
 function log (target, name, descriptor) {
   const fn = descriptor.value;
   descriptor.value = function(...args) {
@@ -6,7 +12,7 @@ function log (target, name, descriptor) {
   };
   return descriptor;
 }
-
+// 添加防抖
 function debounce (delay = 0) {
   return function (target, name, descriptor) {
     const handler = descriptor.value;
@@ -20,7 +26,7 @@ function debounce (delay = 0) {
     return descriptor;
   }
 }
-
+// 添加节流
 function throttle (wait = 0) {
   return function (target, name, descriptor) {
     const handler = descriptor.value;
@@ -37,11 +43,13 @@ function throttle (wait = 0) {
     return descriptor;
   }
 }
-
 class Person {
   constructor(name) {
     this.name = name;
   }
+
+  @readonly
+  job = 'frontEnd';
 
   @log
   sayHi () {
@@ -61,20 +69,22 @@ class Person {
 
 const runner = () => {
   const instance = new Person();
-  instance.checkForDebounce('first');
+  console.log(instance.job);
+
+  /* instance.checkForDebounce('first');
   instance.checkForDebounce('second');
   setTimeout(() => {
     instance.checkForDebounce('third after 1500ms');
-  }, 1500);
+  }, 1500); */
   // debounce second
   // debounce third after 1500ms
 
 
-  instance.checkForThrottle('first');
+  /* instance.checkForThrottle('first');
   instance.checkForThrottle('second');
   setTimeout(() => {
     instance.checkForThrottle('third after 1500ms');
-  }, 1500);
+  }, 1500); */
   // throttle first
   // throttle third after 1500ms
 };
