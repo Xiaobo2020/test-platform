@@ -1,9 +1,10 @@
-function logger (target, name, descriptor) {
+function log (target, name, descriptor) {
   const fn = descriptor.value;
   descriptor.value = function(...args) {
     console.log('This is logger text');
     fn.apply(this, args);
-  }
+  };
+  return descriptor;
 }
 
 function debounce (delay = 0) {
@@ -15,7 +16,8 @@ function debounce (delay = 0) {
       timerId = setTimeout(() => {
         handler.apply(this, args);
       }, delay);
-    }
+    };
+    return descriptor;
   }
 }
 
@@ -31,7 +33,8 @@ function throttle (wait = 0) {
       timerId = setTimeout(() => {
         timerId = undefined;
       }, wait);
-    }
+    };
+    return descriptor;
   }
 }
 
@@ -40,7 +43,7 @@ class Person {
     this.name = name;
   }
 
-  @logger
+  @log
   sayHi () {
     console.log(`Hi, i am ${this.name}.`);
   }
