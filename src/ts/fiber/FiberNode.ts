@@ -1,4 +1,4 @@
-export class FiberNode {
+class FiberNode {
   public tag: string;
   public child: FiberNode | null;
   public sibling: FiberNode | null;
@@ -9,12 +9,6 @@ export class FiberNode {
     this.sibling = null;
     this.return = null;
   }
-}
-
-export function doWalk (fiberNode: FiberNode): void {
-  // 由父节点进入
-  // 由子节点进入
-  // 由
 }
 
 export default FiberNode;
