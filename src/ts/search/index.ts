@@ -66,19 +66,12 @@ const doWalkBFS = (tree: VNode) => {
   }
 }
 
-doWalkDFS(tree);
-// html head title style body h1 div h2 span script
+export default function runner () {
+  console.log('========== DFS ==========');
+  doWalkDFS(tree);
+  // html head title style body h1 div h2 span script
 
-doWalkBFS(tree);
-// html head body title style h1 div script h2 span
-
-interface BTNode {
-  tag: string;
-  child: BTNode | null;
-  sibling: BTNode | null;
-  ret: BTNode | null;
-}
-
-const convert = (vnode: VNode): BTNode => {
-  return;
+  console.log('========== BFS ==========');
+  doWalkBFS(tree);
+  // html head body title style h1 div script h2 span
 }

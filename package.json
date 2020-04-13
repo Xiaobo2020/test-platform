@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "tsc": "rm -rf src/ts/**/*.js && tsc src/ts/**/*.ts",
     "compile": "rm -rf lib && ./node_modules/.bin/babel src --out-dir lib",
     "dev": "node ./lib/index.js",
     "start": "npm run compile && npm run dev"
