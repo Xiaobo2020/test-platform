@@ -25,10 +25,7 @@ function createFiberNode (
   siblingNode: FiberNode | null,
   returnNode: FiberNode | null,
 ): FiberNode {
-  const fiberNode = new FiberNode(objectNode.tag);
-
-  fiberNode.sibling = siblingNode;
-  fiberNode.return = returnNode;
+  const fiberNode = new FiberNode(objectNode.tag, siblingNode, returnNode);
 
   if (objectNode.children.length > 0) {
     const children = [];
@@ -45,12 +42,16 @@ function createFiberNode (
 }
 
 let count = 0;
-function doWalkFiberNode (fiberNode: FiberNode, prevNode: FiberNode | null) {
+function doWalkFiberNode (
+  fiberNode: FiberNode, 
+  prevNode: FiberNode | null
+): [FiberNode | null, FiberNode | null] {
   if (fiberNode === null) {
-    console.log('<End>');
+    // 从根节点返回
     return [fiberNode, prevNode];
   }
   if (count === 4) {
+    // 限制每次打印三个节点
     count = 0;
     return [fiberNode, prevNode];
   }
@@ -60,6 +61,7 @@ function doWalkFiberNode (fiberNode: FiberNode, prevNode: FiberNode | null) {
       || prevNode.sibling === fiberNode // 兄弟节点过来
   ) {
     console.log(fiberNode.tag);
+    // 遍历节点结束后进行计数增加
     count++;
     if (fiberNode.child) {
       // 尝试遍历子节点
