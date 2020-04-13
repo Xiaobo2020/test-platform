@@ -55,6 +55,7 @@ function doWalkFiberNode (
     count = 0;
     return [fiberNode, prevNode];
   }
+
   if (
     prevNode === null // 根节点过来
       || prevNode === fiberNode.return // 父节点过来
@@ -63,6 +64,13 @@ function doWalkFiberNode (
     console.log(fiberNode.tag);
     // 遍历节点结束后进行计数增加
     count++;
+  }
+
+  if (
+    prevNode === null // 根节点过来
+      || prevNode === fiberNode.return // 父节点过来
+      || prevNode.sibling === fiberNode // 兄弟节点过来
+  ) {
     if (fiberNode.child) {
       // 尝试遍历子节点
       return doWalkFiberNode(fiberNode.child, fiberNode);
