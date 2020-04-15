@@ -5,7 +5,8 @@
 // import chainRunner from './chain';
 // import regexRunner from './regex';
 // import arrowRunner from './arrow';
-import queueRunner from './queue';
+// import queueRunner from './queue';
+import objectRunner from './object';
 
 const runner = () => {
   // decoratorRunner();
@@ -15,7 +16,8 @@ const runner = () => {
   // chainRunner();
   // regexRunner();
   // arrowRunner();
-  queueRunner();
+  // queueRunner();
+  objectRunner();
 };
 
 runner();
