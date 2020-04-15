@@ -7,7 +7,8 @@
 // import arrowRunner from './arrow';
 // import queueRunner from './queue';
 // import objectRunner from './object';
-import reactiveRunner from './reactive';
+// import reactiveRunner from './reactive';
+import sumRunner from './sum';
 
 const runner = () => {
   // decoratorRunner();
@@ -19,7 +20,8 @@ const runner = () => {
   // arrowRunner();
   // queueRunner();
   // objectRunner();
-  reactiveRunner();
+  // reactiveRunner();
+  sumRunner();
 };
 
 runner();
