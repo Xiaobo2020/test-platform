@@ -6,7 +6,7 @@
     "tsc": "rm -rf src/ts/**/*.js && tsc src/ts/**/*.ts",
     "compile": "rm -rf lib && ./node_modules/.bin/babel src --out-dir lib",
     "dev": "node ./lib/index.js",
-    "start": "npm run compile && npm run dev"
+    "start": "npm run tsc && npm run compile && npm run dev"
   },
   "keywords": [],
   "author": "",
