@@ -6,7 +6,8 @@
 // import regexRunner from './regex';
 // import arrowRunner from './arrow';
 // import queueRunner from './queue';
-import objectRunner from './object';
+// import objectRunner from './object';
+import reactiveRunner from './reactive';
 
 const runner = () => {
   // decoratorRunner();
@@ -17,7 +18,8 @@ const runner = () => {
   // regexRunner();
   // arrowRunner();
   // queueRunner();
-  objectRunner();
+  // objectRunner();
+  reactiveRunner();
 };
 
 runner();
