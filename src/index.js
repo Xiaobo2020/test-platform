@@ -3,7 +3,8 @@
 // import {default as searchRunner} from './ts/search';
 // import {default as fiberRunner} from './ts/fiber';
 // import chainRunner from './chain';
-import regexRunner from './regex';
+// import regexRunner from './regex';
+import arrowRunner from './arrow';
 
 const runner = () => {
   // decoratorRunner();
@@ -11,7 +12,8 @@ const runner = () => {
   // searchRunner();
   // fiberRunner();
   // chainRunner();
-  regexRunner();
+  // regexRunner();
+  arrowRunner();
 };
 
 runner();
