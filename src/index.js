@@ -4,7 +4,8 @@
 // import {default as fiberRunner} from './ts/fiber';
 // import chainRunner from './chain';
 // import regexRunner from './regex';
-import arrowRunner from './arrow';
+// import arrowRunner from './arrow';
+import queueRunner from './queue';
 
 const runner = () => {
   // decoratorRunner();
@@ -13,7 +14,8 @@ const runner = () => {
   // fiberRunner();
   // chainRunner();
   // regexRunner();
-  arrowRunner();
+  // arrowRunner();
+  queueRunner();
 };
 
 runner();
