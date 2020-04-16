@@ -10,7 +10,13 @@ const regSufIsNot = /\w(?!\-)/g;
 
 const fn = c => c.toUpperCase();
 
-export default function runner () {
+function thousandSeprator () {
+  const numStr = '1234567';
+  const reg = /(\d)(?=(\d{3})+$)/g;
+  console.log(numStr.replace(reg, '$1,'));
+}
+
+function toggleChar () {
   const str = 'ab-cd-ef';
 
   const array = [
@@ -21,4 +27,9 @@ export default function runner () {
   ];
 
   console.log(array);
+}
+
+export default function runner () {
+  // toggleChar();
+  thousandSeprator();
 }
