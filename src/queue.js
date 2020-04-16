@@ -27,7 +27,7 @@ Queue.prototype.start = function () {
   this.doTask();
 }
 
-export default function runner () {
+export default function () {
   const q = new Queue();
   q
     .task(1000, () => console.log(1))

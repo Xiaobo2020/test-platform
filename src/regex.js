@@ -29,7 +29,7 @@ function toggleChar () {
   console.log(array);
 }
 
-export default function runner () {
+export default function () {
   // toggleChar();
   thousandSeprator();
 }

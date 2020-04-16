@@ -13,7 +13,7 @@ function reactive (obj) {
   }, {});
 }
 
-export default function runner () {
+export default function () {
   const obj = {a: 1, b: 'Hello'};
   const obj2 = reactive(obj);
   console.log(obj2.a);

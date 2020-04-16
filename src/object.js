@@ -8,6 +8,6 @@ function fooRunner () {
   console.log(a.__proto__ === Foo.prototype);
 }
 
-export default function runner () {
+export default function () {
   fooRunner();
 }

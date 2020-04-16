@@ -1,4 +1,4 @@
-export default function runner () {
+export default function () {
   function space () {
     this.a = 1;
     const obj = {

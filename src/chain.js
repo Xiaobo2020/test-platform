@@ -36,7 +36,7 @@ Chain.prototype.sleep = function (timeout = 0) {
 }
 
 
-export default function runner () {
+export default function () {
   const chain = new Chain();
   chain.eat().sleep(5).eat().sleep(6).work();
 }
