@@ -10,8 +10,8 @@
 // import reactiveRunner from './reactive';
 // import sumRunner from './sum';
 // import uniqueRunner from './unique';
-// import taskRunner from './task';
-import thousandRunner from './thousand';
+import taskRunner from './task';
+// import thousandRunner from './thousand';
 
 const runner = () => {
   // decoratorRunner();
@@ -26,8 +26,8 @@ const runner = () => {
   // reactiveRunner();
   // sumRunner();
   // uniqueRunner();
-  // taskRunner();
-  thousandRunner();
+  taskRunner();
+  // thousandRunner();
 };
 
 runner();

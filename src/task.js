@@ -1,6 +1,6 @@
 import { setImmediate } from "core-js";
 
-export default function () {
+function test1 () {
   setTimeout(() => {
     console.log('log - timeout');
   }, 0);
@@ -22,6 +22,23 @@ export default function () {
     console.log('log - promise1 - then');
   });
   console.log('log - end');
+}
+
+function test2 () {
+  const promise = new Promise((resolve) => {
+    console.log('log - promise');
+    resolve('promise');
+  });
+  promise.then(() => {
+    console.log('log - promise - then');
+  });
+  process.nextTick(() => {
+    console.log('log - nextTick')
+  });
+}
+
+export default function () {
+  test2();
 }
 
 // log - promise1
